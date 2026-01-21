@@ -30,7 +30,7 @@ public class ConsoleUtils {
                 number = Double.parseDouble(sc.nextLine());
                 return number;
             } catch(NumberFormatException ex) {
-                System.out.println("Error: ingresa un número decimal válido (usa punto para decimales");
+                System.out.println("Error: ingresa un número decimal válido (usa punto para decimales)");
             }
         }
     }

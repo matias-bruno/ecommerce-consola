@@ -8,6 +8,7 @@ import com.techlab.excepciones.NonPositiveNumberException;
 import com.techlab.excepciones.StockInsuficienteException;
 import com.techlab.productos.Producto;
 import com.techlab.productos.ProductoService;
+import com.techlab.utils.ConsoleUtils;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -33,8 +34,7 @@ public class PedidoService {
             Producto producto = productoService.buscarProductoPorId();
             if(producto != null) {
                 System.out.println("Producto: " + producto.getNombre());
-                System.out.print("Ingrese cantidad: ");
-                int cantidad = in.nextInt();
+                int cantidad = ConsoleUtils.inputInteger("Ingrese cantidad: ");
                 try {
                     pedido.agregarProducto(producto, cantidad);
                 } catch(StockInsuficienteException | NonPositiveNumberException ex) {
